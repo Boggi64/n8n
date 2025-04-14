@@ -1,0 +1,20 @@
+services:
+  - type: web                # Web service (no cron, no worker)
+    name: n8n                # Nombre en Render
+    env: docker              # Indica que usará Docker
+    branch: main             # Rama de GitHub
+    repo: https://github.com/Boggi64/n8n
+    dockerfilePath: docker/images/n8n-custom/Dockerfile   # <-- Aquí el cambio
+    envVars:
+      - key: N8N_VERSION
+        value: "1.89.0"      # Versión inicial
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        value: <TU_HOST_POSTGRES>
+      - key: DB_POSTGRESDB_PASSWORD
+        value: <TU_PASSWORD>
+      - key: NODE_ENV
+        value: production
+    plan: free               # O el plan que prefieras
+    
