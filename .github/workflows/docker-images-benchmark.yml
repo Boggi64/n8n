@@ -42,5 +42,5 @@ jobs:
           provenance: false
           push: true
           tags: |
-            ghcr.io/${{ format ('{0}', github.repository_owner)|lower }}/n8n-benchmark:latest
+            ghcr.io/boggi64/n8n-benchmark:latest
             
